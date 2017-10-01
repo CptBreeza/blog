@@ -1,9 +1,10 @@
 # Mandatory settings
 
-name: Chalk
+name: Bravity
 paginate: 25
 url: # add your site url (format: https://example.com/)
 blog_theme: light # Or use dark
+baseurl: /blog
 
 # Optional settings
 
