@@ -35,3 +35,8 @@ tag: notes
 
 1. 使用 `LaTeXTools` 包
 2. 使用 Skim 可以实时查看编译好的 pdf 文档
+
+## References
+
+- [中文](http://leungwensen.github.io/blog/2015/fixing-latex-in-mac.html)
+- [Sublime 集成](http://zhihu.com/question/23918126/answer/29977055)

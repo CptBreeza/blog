@@ -93,3 +93,7 @@ Motions provide context.
 
 - `<Alt-#>` - Navigate tabs
 - `<C-w>h/j/k/l` - Navigate panes
+
+## Referencees
+
+- [Learn Vim Progressively](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
