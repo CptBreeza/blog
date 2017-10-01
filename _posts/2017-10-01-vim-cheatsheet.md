@@ -20,7 +20,9 @@ tag: notes
 ## Commands
 
 `[OPERATOR][NUMBER][MOTION]`
+
 `N<COMMAND>`
+
 `<START POSITION><COMMAND><END POSITION>`
 
 ### Operator
@@ -53,6 +55,7 @@ Motions provide context.
 - {} - Beginning of current/next paragraph
 
 **Example**: remove everything until the 3rd occurrence of the '.'
+
 `3dt.`
 
 ## Searching
