@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem 'rake'
 gem "autoprefixer-rails"
 gem "html-proofer"
 gem "jekyll"
