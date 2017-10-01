@@ -12,6 +12,14 @@ tag: notes
 2. 使用 `ctexart`
 3. 设置字体
 
+4. 可用自带字体
+   1. `STSong`
+   2. `STHeiti`
+   3. `STKaiti`
+   4. `SKFangsong`
+
+例子
+
 ```latex
 \documentclass[UTF8, nofonts]{ctexart}
 
@@ -22,12 +30,6 @@ tag: notes
 \begin{document}
 \end{document}
 ```
-
-4. 可用自带字体
-   1. `STSong`
-   2. `STHeiti`
-   3. `STKaiti`
-   4. `SKFangsong`
 
 ## Sublime 集成
 
