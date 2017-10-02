@@ -20,6 +20,7 @@ tag: notes
 
 例子
 
+
 ```latex
 \documentclass[UTF8, nofonts]{ctexart}
 
@@ -30,6 +31,7 @@ tag: notes
 \begin{document}
 \end{document}
 ```
+
 
 ## Sublime 集成
 

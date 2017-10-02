@@ -80,7 +80,7 @@ Motions provide context.
 - `<C-n>` - Next completion
 - `<C-p>` - Previous completion
 
-## Execute and External Command
+## Execute External Command
 
 `:!ls -al`
 
