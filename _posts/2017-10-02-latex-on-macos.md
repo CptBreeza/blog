@@ -11,7 +11,6 @@ tag: notes
 1. 使用 `XeLaTeX`
 2. 使用 `ctexart`
 3. 设置字体
-
 4. 可用自带字体
    1. `STSong`
    2. `STHeiti`
