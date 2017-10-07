@@ -168,6 +168,24 @@
     margin-bottom: 0;
     vertical-align: middle;
   }
+  li {
+    margin-bottom: 15px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 30px 0;
+  }
+  tr {
+    border: 1px solid #ccc;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 6px 13px;
+  }
 }
 
 .article-comments {
