@@ -2,9 +2,8 @@
 
 name: Bravity
 paginate: 25
-url: # add your site url (format: https://example.com/)
+url: http://cptbreeza.me
 blog_theme: light # Or use dark
-baseurl: /blog
 
 # Optional settings
 
