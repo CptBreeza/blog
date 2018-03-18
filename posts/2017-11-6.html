@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Bravity | 2017-11-6</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="stylesheet" href="/assets/light.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav appear">
+  <a href="/" class="header-logo" title="Bravity">Bravity</a>
+</nav>
+
+        <article class="article appear">
+          <header class="article-header">
+            <h1>2017-11-6</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                November 6, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  2 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/weekly">weekly</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2 id="log">Log</h2>
+
+<ul>
+  <li>Ubuntu 16.04 的内核 enable 了 LVM 的 signature 功能，不能加载没有签名的 LVM，尝试自己给 LVM 签名，没有找到 Ubuntu 自带的签名文件，想自己生成一组，但是发现要注册自己的签名文件需要 UEFI 变量支持，虚拟机没有开 UEFI</li>
+  <li>一个解决的办法是重新编译内核，但是因为一些原因没有重新编译完成</li>
+  <li>放弃了自己写一个使用 netfilter 模块的 LVM 的想法，还是直接用 iptables 吧</li>
+  <li>Jbuilder 没有提供直接渲染成 Hash 的功能，需要做一些 Hack 才行，最简单的方法是改掉 <code class="highlighter-rouge">JbuilderHandler</code> 的 <code class="highlighter-rouge">call</code> 方法</li>
+  <li>前后端分离的 Rails app 在一些情况下可以用上面的 hack，再加上 gon，直接把 JSON 渲染到前端使用</li>
+  <li>Rails 在执行 <code class="highlighter-rouge">after_commit</code> 回调之前会判断一下有没有回调，如果没有的话根本不会执行 <code class="highlighter-rouge">committed!</code></li>
+  <li>Rails 的 <code class="highlighter-rouge">touch</code> 会执行 <code class="highlighter-rouge">after_commit</code> 回调</li>
+  <li>学长大致带我过了一下 Rails render 的过程</li>
+  <li>从网上的资料大概了解了一下自己写一个 Handler 的过程（以 CSV 为例）</li>
+</ul>
+
+<h2 id="movies">Movies</h2>
+
+<ul>
+  <li><a href="https://movie.douban.com/subject/26935251/">春宵苦短，少女前进吧！</a></li>
+</ul>
+
+<h2 id="reading-list">Reading List</h2>
+
+<p><a href="http://blog.cloudflare.com/performing-preventing-ssl-stripping-a-plain-english-primer/">Performing &amp; Preventing SSL Stripping: A Plain-English Primer</a></p>
+
+<p><a href="http://www.zaobao.com/forum/views/opinion/story20171019-804125">中共历届党代大会报告语象分析</a></p>
+
+<p><a href="https://theinitium.com/article/20171030-mainland-Party-Congress-Reports/">錢鋼語象報告：十九大之後，什麼是「新時代」的關鍵詞？｜廣場｜十九大｜端傳媒 Initium Media</a></p>
+
+<p><a href="https://increment.com/development/an-introduction-to-local-development-with-containers/">An introduction to local development with containers – Increment issue 3: Development</a></p>
+
+<p><a href="https://www.economist.com/news/leaders/21721656-data-economy-demands-new-approach-antitrust-rules-worlds-most-valuable-resource">The world’s most valuable resource is no longer oil, but data</a></p>
+
+<p><a href="https://theinitium.com/article/20171101-culture-piliartreview/">言論自由與道德衝突的背後，什麼在抬頭？評古根漢中國展動物事件｜深度｜端傳媒 Initium Media</a></p>
+
+<p><a href="http://nautil.us/issue/53/monsters/maths-beautiful-monsters-rp">Math’s Beautiful Monsters - Issue 53: Monsters - Nautilus</a></p>
+
+<p><a href="https://increment.com/development/ask-an-expert/">Ask an Expert – Increment issue 3: Development</a></p>
+
+<p><a href="https://increment.com/development/interview-with-isaac-z-schlueter-ceo-of-npm/">Interview with Isaac Z. Schlueter, CEO of npm – Increment issue 3: Development</a></p>
+
+<p><a href="https://staltz.com/the-web-began-dying-in-2014-heres-how.html">André Staltz - The Web began dying in 2014, here’s how</a></p>
+
+<p><a href="https://www.theguardian.com/technology/2017/mar/11/tim-berners-lee-web-inventor-save-internet">I invented the web. Here are three things we need to change to save it</a></p>
+
+<p><a href="https://theinitium.com/article/20171101-opinion-fangkecheng-littlepink/">方可成：「小粉紅」，一個「張冠李戴」的標籤｜深度｜端傳媒 Initium Media</a></p>
+
+<p><a href="https://zh.wikipedia.org/wiki/%E7%A4%BE%E4%BC%9A%E8%BE%BE%E5%B0%94%E6%96%87%E4%B8%BB%E4%B9%89">社会达尔文主义 - 维基百科，自由的百科全书</a></p>
+
+<p><a href="https://iois.me/120%EF%BC%9Agoogle%E3%80%81%E4%BA%9A%E9%A9%AC%E9%80%8A%E4%BB%AC%E7%9A%84%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E9%83%BD%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F/">120：Google、亚马逊们的人工智能都在哪里？ – 「I/O」会员计划</a></p>
+
+<p><a href="https://iois.me/122%EF%BC%9A2006%EF%BC%8C%E4%B8%AD%E7%BE%8E%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E3%80%8C%E4%B8%87%E5%8E%86-16-%E5%B9%B4%E3%80%8D%EF%BC%9F/">122：2006，中美互联网的「万历 15 年」？ – 「I/O」会员计划</a></p>
+
+<p><a href="https://githubengineering.com/githubs-metal-cloud/">GitHub’s Metal Cloud</a></p>
+
+<p><a href="http://worrydream.com/dbx/">References for “The Future of Programming”</a></p>
+
+<p><a href="https://www.kaggle.com/surveys/2017">The State of ML and Data Science 2017</a></p>
+
+<p><a href="https://www.digitalocean.com/community/tutorials/how-the-iptables-firewall-works">How the Iptables Firewall Works</a></p>
+
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04">How To Set Up a Firewall Using Iptables on Ubuntu 14.04</a></p>
+
+<p><a href="https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands">Iptables Essentials: Common Firewall Rules and Commands</a></p>
+
+<p><a href="https://qz.com/1034972/the-data-that-changed-the-direction-of-ai-research-and-possibly-the-world/">ImageNet: the data that spawned the current AI boom — Quartz</a></p>
+
+<p><a href="https://weibo.com/ttarticle/p/show?id=2309404167787189798611&amp;ssl_rnd=1509801552.161">对话汤浅政明：原来京都真的有森见作品中的“那类人”</a></p>
+
+<p><a href="https://www.quora.com/What-did-Alan-Kay-mean-by-Lisp-is-the-greatest-single-programming-language-ever-designed">Question - Quora</a></p>
+
+<p><a href="http://jeromedalbert.com/how-dhh-organizes-his-rails-controllers">How DHH organizes his Rails controllers - Jerome’s Adventures in Software</a></p>
+
+<p><a href="http://nymag.com/daily/intelligencer/2017/10/whos-sitting-next-to-you-on-the-subway-we-asked.html">Who’s Sitting Next to You on the Subway? We Asked.</a></p>
+
+<p><a href="https://www.wired.com/story/net-states-rule-the-world-we-need-to-recognize-their-power/">Facebook and Google Are Actually ‘Net States.’ And They Rule the World</a></p>
+
+<h2 id="todo">TODO</h2>
+
+<p><a href="https://trello.com/c/UT1lofSI">Baudolino</a></p>
+
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/vendor.js"></script>
+
+
+
+  <script src="/assets/webfonts.js"></script>
+
+
+
+
+  <script src="/assets/scrollappear.js"></script>
+
+
+
+<script src="/assets/application.js"></script>
+
+
+</body>
+</html>

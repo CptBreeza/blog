@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Bravity | Vim Cheatsheet</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="stylesheet" href="/assets/light.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav appear">
+  <a href="/" class="header-logo" title="Bravity">Bravity</a>
+</nav>
+
+        <article class="article appear">
+          <header class="article-header">
+            <h1>Vim Cheatsheet</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                October 1, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  2 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/notes">notes</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h1 id="vim-cheatsheet">Vim Cheatsheet</h1>
+
+<h2 id="file">File</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">:e</code> - Open</li>
+  <li><code class="highlighter-rouge">:w</code> - Save</li>
+  <li><code class="highlighter-rouge">:x, ZZ or :wq</code> - save and quite</li>
+  <li><code class="highlighter-rouge">:q!</code> - quite without saving</li>
+</ul>
+
+<h2 id="commands">Commands</h2>
+
+<p><code class="highlighter-rouge">[OPERATOR][NUMBER][MOTION]</code></p>
+
+<p><code class="highlighter-rouge">N&lt;COMMAND&gt;</code></p>
+
+<p><code class="highlighter-rouge">&lt;START POSITION&gt;&lt;COMMAND&gt;&lt;END POSITION&gt;</code></p>
+
+<h3 id="operator">Operator</h3>
+
+<p>Operators are actions.</p>
+
+<ul>
+  <li>d - Delete</li>
+  <li>c - Change</li>
+  <li>y - Yank</li>
+  <li>p - Paste</li>
+  <li>r - Replace</li>
+  <li>. - Repeat</li>
+  <li>gU - Uppercase</li>
+  <li>gu - Lowercase</li>
+  <li>J -Join the lines together</li>
+  <li>&lt;&gt; - Indent the line</li>
+  <li>= - Auto indent</li>
+</ul>
+
+<h3 id="motions">Motions</h3>
+
+<p>Motions provide context.</p>
+
+<ul>
+  <li>w - Until the start of the next word</li>
+  <li>e - To the end of the current word</li>
+  <li>$ - To the end of the line</li>
+  <li>b - Backward by word</li>
+  <li>t, - Go to just before the character ,</li>
+  <li>fa - Go to the next occurrence of the letter a</li>
+  <li>() - Beginning of current/next sentence</li>
+  <li>{} - Beginning of current/next paragraph</li>
+</ul>
+
+<p><strong>Example</strong>: remove everything until the 3rd occurrence of the ‘.’</p>
+
+<p><code class="highlighter-rouge">3dt.</code></p>
+
+<h2 id="searching">Searching</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">:/cats</code> - Search after the cursor position</li>
+  <li><code class="highlighter-rouge">:?cats</code> - Search before the cursor position</li>
+  <li><code class="highlighter-rouge">%</code> - Matching (), [], {}</li>
+  <li><code class="highlighter-rouge">*</code> - Go to the next occurrence of the word under the cursor</li>
+</ul>
+
+<h3 id="navigation">Navigation</h3>
+
+<ul>
+  <li>n - Go to the next match</li>
+  <li>N - Go to the previous match</li>
+</ul>
+
+<h2 id="replacing">Replacing</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">:%s/cat/dog</code> - Find and Replace the first match</li>
+  <li><code class="highlighter-rouge">:%s/cat/dog/g</code> - Find and Replace all matches</li>
+</ul>
+
+<h2 id="completion">Completion</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;C-n&gt;</code> - Next completion</li>
+  <li><code class="highlighter-rouge">&lt;C-p&gt;</code> - Previous completion</li>
+</ul>
+
+<h2 id="execute-external-command">Execute External Command</h2>
+
+<p><code class="highlighter-rouge">:!ls -al</code></p>
+
+<h2 id="undoredo">Undo/Redo</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">u</code> - Undo</li>
+  <li><code class="highlighter-rouge">&lt;C-r&gt;</code> Redo</li>
+</ul>
+
+<h2 id="tabs-and-panes">Tabs and Panes</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;Alt-#&gt;</code> - Navigate tabs</li>
+  <li><code class="highlighter-rouge">&lt;C-w&gt;h/j/k/l</code> - Navigate panes</li>
+</ul>
+
+<h2 id="referencees">Referencees</h2>
+
+<ul>
+  <li><a href="http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/">Learn Vim Progressively</a></li>
+</ul>
+
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/vendor.js"></script>
+
+
+
+  <script src="/assets/webfonts.js"></script>
+
+
+
+
+  <script src="/assets/scrollappear.js"></script>
+
+
+
+<script src="/assets/application.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Bravity | ES5 Grammar</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="stylesheet" href="/assets/light.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav appear">
+  <a href="/" class="header-logo" title="Bravity">Bravity</a>
+</nav>
+
+        <article class="article appear">
+          <header class="article-header">
+            <h1>ES5 Grammar</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                October 7, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  2 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/notes">notes</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2 id="变量">变量</h2>
+
+<ul>
+  <li>变量是对「值」的<strong>引用</strong></li>
+  <li>全局变量是顶层对象的属性</li>
+  <li>使用 <code class="highlighter-rouge">var</code> 声明的变量会被<strong>提升</strong></li>
+</ul>
+
+<h2 id="数据类型">数据类型</h2>
+
+<ol>
+  <li>原始类型
+    <ol>
+      <li>数值</li>
+      <li>字符串</li>
+      <li>布尔值</li>
+    </ol>
+  </li>
+  <li><code class="highlighter-rouge">undefined</code></li>
+  <li><code class="highlighter-rouge">null</code></li>
+  <li>对象
+    <ol>
+      <li>狭义的对象</li>
+      <li>数组</li>
+      <li>函数</li>
+    </ol>
+  </li>
+</ol>
+
+<p><code class="highlighter-rouge">null</code> 和 <code class="highlighter-rouge">undefined</code> 的区别：<code class="highlighter-rouge">null</code> 可以被自动转换为 <code class="highlighter-rouge">0</code>，而且 <code class="highlighter-rouge">typeof null // 'object'</code></p>
+
+<h2 id="数值">数值</h2>
+
+<ul>
+  <li>所有数值都是 64 位浮点数</li>
+  <li><code class="highlighter-rouge">NaN</code> 表示「非数字」，主要出现在将字符串解析成数字出错的场合</li>
+  <li><code class="highlighter-rouge">NaN</code> 不等于任何值，包括它自己</li>
+  <li>使用 <code class="highlighter-rouge">isNaN</code> 可以判断一个值是否为 <code class="highlighter-rouge">NaN</code></li>
+  <li><code class="highlighter-rouge">isNaN</code> 会对字符串，对象和数组返回 <code class="highlighter-rouge">true</code>，但是，对于空数组和只有一个数值成员的数组，<code class="highlighter-rouge">isNaN</code> 返回 <code class="highlighter-rouge">false</code></li>
+  <li>与数值相关的全局函数：<code class="highlighter-rouge">parseInt()</code>，<code class="highlighter-rouge">parseFloat</code></li>
+</ul>
+
+<h2 id="字符串">字符串</h2>
+
+<ul>
+  <li>字符串可以使用数组的方括号运算符来<strong>访问</strong></li>
+</ul>
+
+<h2 id="对象">对象</h2>
+
+<ul>
+  <li>对象其实是<strong>键值对</strong></li>
+  <li>所有键名都是<strong>字符串</strong>，如果不是，会被转换成字符串；键也被称为<strong>属性</strong></li>
+  <li>读取/写入属性
+    <ol>
+      <li>使用方括号运算符</li>
+      <li>使用点</li>
+    </ol>
+  </li>
+  <li>检验键是否声明过： <code class="highlighter-rouge">'a' in window</code></li>
+  <li>使用 <code class="highlighter-rouge">delete</code> 来删除对象的属性（无法删除继承的属性）</li>
+  <li>遍历对象的属性：</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 如果只想遍历对象本身的属性，可以使用 hasOwnProperty 方法判断 key</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="数组">数组</h2>
+
+<p>如果一个对象的所有键名都是正整数或零，并且有 <code class="highlighter-rouge">length</code> 属性，那么这个对象就被称为「类数组对象」。一个「类数组对象」有两种办法可以使用数组的方法</p>
+
+<ol>
+  <li><code class="highlighter-rouge">var arr = Array.prototype.slice.call(arrayLike)</code></li>
+  <li><code class="highlighter-rouge">Array.prototype.forEach.call(arrayLike, print);</code></li>
+</ol>
+
+<h2 id="函数">函数</h2>
+
+<h4 id="提升">提升</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">f</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(){};</span>
+<span class="c1">// TypeError: undefined is not a function</span>
+</code></pre></div></div>
+
+<p>上面的代码等同于下面的形式：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span><span class="p">;</span>
+<span class="nx">f</span><span class="p">();</span>
+<span class="nx">f</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
+</code></pre></div></div>
+
+<h4 id="定义域">定义域</h4>
+
+<ul>
+  <li>JavaScript 只有两种作用域：一种是全局作用域，另一种是函数作用域</li>
+  <li>闭包</li>
+</ul>
+
+<h4 id="参数">参数</h4>
+
+<ul>
+  <li>不严格检查参数的数量</li>
+  <li>原始类型：值传递；对象：引用传递</li>
+  <li><code class="highlighter-rouge">arguments</code> 对象：一个「类数组对象」</li>
+</ul>
+
+<h2 id="运算符">运算符</h2>
+
+<h4 id="加">加</h4>
+
+<ol>
+  <li>如果运算子是对象，先使用该对象的 <code class="highlighter-rouge">valueOf</code> 转换为原始类型，如果还不是原始类型，再执行 <code class="highlighter-rouge">toString</code> 方法</li>
+  <li>两个对象都是原始类型后，只要有一个运算子是字符串，则两个运算子都转换为字符串</li>
+  <li>否则，两个运算子都转换为数值，执行加法运算</li>
+</ol>
+
+<h4 id="比较">比较</h4>
+
+<ol>
+  <li>原始类型：转换为数值再比较</li>
+  <li>对象：先使用 <code class="highlighter-rouge">valueOf</code>，如果返回的结果还是对象，再调用 <code class="highlighter-rouge">toString</code></li>
+</ol>
+
+<h4 id="严格相等">严格相等</h4>
+
+<ol>
+  <li>不同类型的值：<code class="highlighter-rouge">false</code></li>
+  <li>同一类型的原始值：值相同返回 <code class="highlighter-rouge">true</code>，否则返回 <code class="highlighter-rouge">false</code></li>
+  <li>同一类型的对象：判断是否是同一个对象的引用</li>
+</ol>
+
+<h4 id="相等">相等</h4>
+
+<ol>
+  <li>原型类型的值：会转换成数值类型再比较是否相同</li>
+  <li>对象与原型类型值：对象会被转化成原始类型的值</li>
+</ol>
+
+<h2 id="数据类型转换">数据类型转换</h2>
+
+<p>以下 5 组值会被转换为 <code class="highlighter-rouge">false</code>：</p>
+
+<ol>
+  <li><code class="highlighter-rouge">undefined</code></li>
+  <li><code class="highlighter-rouge">null</code></li>
+  <li><code class="highlighter-rouge">0</code>，<code class="highlighter-rouge">+0</code>，<code class="highlighter-rouge">-0</code></li>
+  <li><code class="highlighter-rouge">NaN</code></li>
+  <li><code class="highlighter-rouge">''</code></li>
+</ol>
+
+<h2 id="错误处理机制">错误处理机制</h2>
+
+<ul>
+  <li>使用 <code class="highlighter-rouge">throw</code> 抛出异常</li>
+  <li>使用 <code class="highlighter-rouge">try…catch</code> 结构捕获异常</li>
+  <li>使用 <code class="highlighter-rouge">finally</code> 执行无论是否出现异常都必须执行的语句</li>
+</ul>
+
+<h2 id="基本风格">基本风格</h2>
+
+<ol>
+  <li>使用花括号包裹块</li>
+  <li>花括号跟在关键字后面，不另起一行</li>
+  <li>使用行尾的分号</li>
+  <li>把变量声明都放在代码块的头部</li>
+  <li>使用严格相等</li>
+  <li>使用单引号字符串</li>
+</ol>
+
+<h2 id="reference">Reference</h2>
+<p><a href="http://javascript.ruanyifeng.com/#toc1">JavaScript 标准参考</a></p>
+
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/vendor.js"></script>
+
+
+
+  <script src="/assets/webfonts.js"></script>
+
+
+
+
+  <script src="/assets/scrollappear.js"></script>
+
+
+
+<script src="/assets/application.js"></script>
+
+
+</body>
+</html>

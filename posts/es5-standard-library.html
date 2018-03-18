@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Bravity | ES5 标准库</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="stylesheet" href="/assets/light.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav appear">
+  <a href="/" class="header-logo" title="Bravity">Bravity</a>
+</nav>
+
+        <article class="article appear">
+          <header class="article-header">
+            <h1>ES5 标准库</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                October 8, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  1 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/notes">notes</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2 id="es5-标准库">ES5 标准库</h2>
+
+<h4 id="object">Object</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">Object.keys</code></li>
+  <li><code class="highlighter-rouge">Object.getOwnPropertyNames()</code></li>
+  <li><code class="highlighter-rouge">Object.prototype.valueOf()</code></li>
+  <li><code class="highlighter-rouge">Object.prototype.hasProperty()</code></li>
+</ul>
+
+<h4 id="array">Array</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">Array.isArray()</code></li>
+  <li>数组元素操作：<code class="highlighter-rouge">push/pop</code> (!)，<code class="highlighter-rouge">shift/unshift</code> (!)，<code class="highlighter-rouge">indexOf</code></li>
+  <li>数组操作：<code class="highlighter-rouge">concat</code>，<code class="highlighter-rouge">reverse</code>，<code class="highlighter-rouge">slice</code>，<code class="highlighter-rouge">join</code></li>
+  <li>函数式编程：<code class="highlighter-rouge">sort</code>，<code class="highlighter-rouge">map</code>，<code class="highlighter-rouge">forEach</code>，<code class="highlighter-rouge">filter</code>，<code class="highlighter-rouge">reduce</code></li>
+</ul>
+
+<h4 id="string">String</h4>
+
+<ul>
+  <li>字符串操作：<code class="highlighter-rouge">concat</code>，<code class="highlighter-rouge">slice</code>，<code class="highlighter-rouge">trim</code>，<code class="highlighter-rouge">toLowerCase/toUpperCase</code>，<code class="highlighter-rouge">split</code></li>
+  <li>正则表达式相关：<code class="highlighter-rouge">match</code>，<code class="highlighter-rouge">search</code>，<code class="highlighter-rouge">replace</code></li>
+</ul>
+
+<h4 id="date">Date</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">Date()</code> 返回当前时间（字符串）</li>
+  <li>类型转换
+    <ol>
+      <li>转换为数值：对应的毫秒数</li>
+      <li>转换为字符串：对应的日期字符串</li>
+    </ol>
+  </li>
+  <li>运算
+    <ol>
+      <li>加法：返回连接后的两个字符串</li>
+      <li>减法：间隔的毫秒数</li>
+    </ol>
+  </li>
+  <li><code class="highlighter-rouge">Date.now</code> 距离 1970 年 1 月 1 日 00:00:00 UTC 的毫秒数</li>
+  <li>
+    <p><code class="highlighter-rouge">Date.parse</code> 解析时间，返回与上条格式相同的毫秒数</p>
+  </li>
+  <li>一系列 <code class="highlighter-rouge">get*/set*</code> 方法</li>
+</ul>
+
+<h4 id="regexp">RegExp</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">test</code>，<code class="highlighter-rouge">exec</code></li>
+</ul>
+
+<h4 id="json">JSON</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">JSON.stringify</code> 将一个值转换成符合 JSON 标准的格式</li>
+  <li><code class="highlighter-rouge">JSON.parse</code> 将一个符合 JSON 标准的字符串转换成对象</li>
+</ul>
+
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/vendor.js"></script>
+
+
+
+  <script src="/assets/webfonts.js"></script>
+
+
+
+
+  <script src="/assets/scrollappear.js"></script>
+
+
+
+<script src="/assets/application.js"></script>
+
+
+</body>
+</html>

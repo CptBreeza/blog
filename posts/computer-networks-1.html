@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Bravity | Computer Networks 1</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="stylesheet" href="/assets/light.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav appear">
+  <a href="/" class="header-logo" title="Bravity">Bravity</a>
+</nav>
+
+        <article class="article appear">
+          <header class="article-header">
+            <h1>Computer Networks 1</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                October 5, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  1 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/notes">notes</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2 id="core-concepts">Core Concepts</h2>
+
+<ul>
+  <li><strong>End system</strong> connects by <strong>communication link</strong> and <strong>packet switch</strong></li>
+  <li>2 types of packet switch
+    <ol>
+      <li><strong>router</strong></li>
+      <li><strong>link-layer switch</strong></li>
+    </ol>
+  </li>
+  <li>End system can access internet through <strong>ISP</strong>(Internet Service Provider)</li>
+</ul>
+
+<h2 id="packet-switching">Packet Switching</h2>
+
+<ul>
+  <li>
+    <p>Most packet switches use store-and-forward transmission at the input end</p>
+
+    <p>which introduces L/R delay.</p>
+  </li>
+  <li>
+    <p>Packet switch has a output buffer(output queue) for every link</p>
+
+    <p>which introduces queue delay.</p>
+  </li>
+  <li>
+    <p>4 types of delay in packet switching networks</p>
+
+    <ol>
+      <li>nodal process delay</li>
+      <li>queueing delay</li>
+      <li>transmission delay</li>
+      <li>propagation delay</li>
+    </ol>
+  </li>
+  <li>
+    <p>The router will drop the packet when the output buffer is full(<strong>packet loss</strong>)</p>
+  </li>
+  <li>
+    <p>The <strong>throughput</strong> equals to the minimal of the transmission rate of the path</p>
+  </li>
+</ul>
+
+<h2 id="layered-protocol">Layered Protocol</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layer</th>
+      <th>Protocols</th>
+      <th>Packet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Application Layer</td>
+      <td>HTTP/FTP/SMTP/DNS</td>
+      <td>message</td>
+    </tr>
+    <tr>
+      <td>Transport Layer</td>
+      <td>TCP/UDP</td>
+      <td>segment</td>
+    </tr>
+    <tr>
+      <td>Network Layer</td>
+      <td>IP</td>
+      <td>datagram</td>
+    </tr>
+    <tr>
+      <td>Data Link Layer</td>
+      <td>ARP</td>
+      <td>frame</td>
+    </tr>
+    <tr>
+      <td>Physical Layer</td>
+      <td> </td>
+      <td>bit</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="http-protocol">HTTP Protocol</h2>
+
+<ul>
+  <li>HTTP Protocol builds on top of <strong>TCP Protocol</strong></li>
+  <li>HTTP over persistent connection and unpersistent connection</li>
+  <li>HTTP uses Cookie to store states</li>
+</ul>
+
+<h2 id="dns">DNS</h2>
+
+<ul>
+  <li>DNS builds on top of <strong>UDP Protocol</strong></li>
+  <li>3 types of frequently used DNS record
+    <ol>
+      <li>A record</li>
+      <li>CNAME record</li>
+      <li>MX record</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>Computer Networks - A Top-Down Approach</li>
+  <li><a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a></li>
+</ul>
+
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/vendor.js"></script>
+
+
+
+  <script src="/assets/webfonts.js"></script>
+
+
+
+
+  <script src="/assets/scrollappear.js"></script>
+
+
+
+<script src="/assets/application.js"></script>
+
+
+</body>
+</html>

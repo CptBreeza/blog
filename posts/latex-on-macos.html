@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Bravity | LaTeX on macOS</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="stylesheet" href="/assets/light.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav appear">
+  <a href="/" class="header-logo" title="Bravity">Bravity</a>
+</nav>
+
+        <article class="article appear">
+          <header class="article-header">
+            <h1>LaTeX on macOS</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                October 2, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  1 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/notes">notes</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2 id="使用中文">使用中文</h2>
+
+<ol>
+  <li>使用 <code class="highlighter-rouge">XeLaTeX</code></li>
+  <li>使用 <code class="highlighter-rouge">ctexart</code></li>
+  <li>设置字体</li>
+  <li>可用自带字体
+    <ol>
+      <li><code class="highlighter-rouge">STSong</code></li>
+      <li><code class="highlighter-rouge">STHeiti</code></li>
+      <li><code class="highlighter-rouge">STKaiti</code></li>
+      <li><code class="highlighter-rouge">SKFangsong</code></li>
+    </ol>
+  </li>
+</ol>
+
+<p>例子</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[UTF8, nofonts]</span><span class="p">{</span>ctexart<span class="p">}</span>
+
+<span class="k">\setCJKmainfont</span><span class="na">[BoldFont=STHeiti,ItalicFont=STKaiti]</span><span class="p">{</span>STSong<span class="p">}</span>
+<span class="k">\setCJKsansfont</span><span class="na">[BoldFont=STHeiti]</span><span class="p">{</span>STXihei<span class="p">}</span>
+<span class="k">\setCJKmonofont</span><span class="p">{</span>STFangsong<span class="p">}</span>
+
+<span class="nt">\begin{document}</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<h2 id="sublime-集成">Sublime 集成</h2>
+
+<ol>
+  <li>使用 <code class="highlighter-rouge">LaTeXTools</code> 包</li>
+  <li>使用 Skim 可以实时查看编译好的 pdf 文档</li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="http://leungwensen.github.io/blog/2015/fixing-latex-in-mac.html">中文</a></li>
+  <li><a href="http://zhihu.com/question/23918126/answer/29977055">Sublime 集成</a></li>
+</ul>
+
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/vendor.js"></script>
+
+
+
+  <script src="/assets/webfonts.js"></script>
+
+
+
+
+  <script src="/assets/scrollappear.js"></script>
+
+
+
+<script src="/assets/application.js"></script>
+
+
+</body>
+</html>

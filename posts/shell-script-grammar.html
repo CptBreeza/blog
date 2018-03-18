@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Bravity | Shell Script Grammar</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="stylesheet" href="/assets/light.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav appear">
+  <a href="/" class="header-logo" title="Bravity">Bravity</a>
+</nav>
+
+        <article class="article appear">
+          <header class="article-header">
+            <h1>Shell Script Grammar</h1>
+            <p></p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                October 3, 2017
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  2 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/notes">notes</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <h2 id="variables">Variables</h2>
+
+<h4 id="语法">语法</h4>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh # 使用 Bourne shell</span>
+
+<span class="nb">echo</span> <span class="nv">$MY_MESSAGE</span>
+<span class="c"># 未被赋值的变量为空(字符串)</span>
+<span class="c"># 在 Shell 中使用 ./my_script.sh 执行脚本时，实际上创建了新进程，在 Shell 中赋值的变量不会被带进来</span>
+<span class="c"># 想要在 my_script.sh 中使用 Shell 中赋值的变量，那么</span>
+<span class="c"># 1. export MYVAR，这样在创建新进程时会继承变量</span>
+<span class="c"># 2. source my_script.sh，也可以 . ./my_script.sh，不创建新进程，在当前的 Shell 中执行脚本，而这样也</span>
+<span class="c">#    将脚本中的变量暴露出来</span>
+
+<span class="nv">MY_MESSAGE</span><span class="o">=</span><span class="s2">"Hello World!"</span> <span class="c"># 使用引号包裹字符串，防止意外情况</span>
+<span class="nb">echo</span> <span class="nv">$MY_MESSAGE</span>
+<span class="nb">read </span>MY_MESSAGE <span class="c"># 从 stdin 读变量</span>
+
+<span class="nb">read </span>MY_NAME
+<span class="nb">echo</span> <span class="s2">"Your name is : </span><span class="k">${</span><span class="nv">MY_NAME</span><span class="k">:-</span><span class="sb">`</span>whoami<span class="sb">`</span><span class="k">}</span><span class="s2">"</span>
+<span class="c"># :- 可以为变量指定默认值</span>
+
+touch <span class="nv">$MY_NAME_file</span> <span class="c"># 错误，变量 MY_NAME_file 不存在</span>
+touch <span class="k">${</span><span class="nv">MY_NAME</span><span class="k">}</span>_file <span class="c"># 正确</span>
+</code></pre></div></div>
+
+<h4 id="特殊变量">特殊变量</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">$0</code> - 程序的 basename</li>
+  <li><code class="highlighter-rouge">$1 - 9</code> - 脚本的头 9 个参数</li>
+  <li><code class="highlighter-rouge">$@</code> - 所有参数</li>
+  <li><code class="highlighter-rouge">$#</code> - 参数的数量</li>
+</ul>
+
+<p>如果有超过 9 个参数，使用 <code class="highlighter-rouge">shift</code>，参考下面的脚本</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="k">while</span> <span class="o">[</span> <span class="s2">"$#"</span> <span class="nt">-gt</span> <span class="s2">"0"</span><span class="o">]</span>
+<span class="k">do
+  </span><span class="nb">echo</span> <span class="s2">"</span><span class="se">\$</span><span class="s2">1 is </span><span class="nv">$1</span><span class="s2">"</span>
+  <span class="nb">shift
+</span><span class="k">done</span>
+</code></pre></div></div>
+
+<h2 id="loops">Loops</h2>
+
+<h4 id="for-loops">for loops</h4>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+<span class="k">for </span>i <span class="k">in </span>1 2 3 4 5
+<span class="k">do
+  </span><span class="nb">echo</span> <span class="s2">"Looping ... i is set to </span><span class="nv">$i</span><span class="s2">"</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
+<h4 id="while-loops">while loops</h4>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+<span class="nv">INPUT_STRING</span><span class="o">=</span>hello
+<span class="k">while</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$INPUT_STRING</span><span class="s2">"</span> <span class="o">!=</span> <span class="s2">"bye"</span><span class="o">]</span>
+<span class="k">do
+  </span><span class="nb">echo</span> <span class="s2">"Please type something in (bye to quit)"</span>
+  <span class="nb">read </span>INPUT_STRING
+  <span class="nb">echo</span> <span class="s2">"You typed: </span><span class="nv">$INPUT_STRING</span><span class="s2">"</span>
+<span class="k">done</span>
+
+<span class="c"># : 总是被判定为 true，所以使用 "while :" 可以实现死循环</span>
+
+<span class="c"># 常用技巧</span>
+
+<span class="k">while </span><span class="nb">read </span>f
+<span class="k">do
+  case</span> <span class="nv">$f</span> <span class="k">in
+       </span>hello<span class="p">)</span>  <span class="nb">echo </span>English  <span class="p">;;</span>
+       howdy<span class="p">)</span>  <span class="nb">echo </span>American <span class="p">;;</span>
+       <span class="k">*</span><span class="p">)</span>      <span class="nb">echo </span>Unknown  <span class="p">;;</span>
+  <span class="k">esac</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
+<h2 id="test">Test</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> ... <span class="o">]</span>     <span class="c"># 方括号周围的空格是必需的</span>
+<span class="k">then</span>           <span class="c"># 也可以写作 "if [ ... ]; then"</span>
+  <span class="c"># if-code</span>
+<span class="k">else</span>
+  <span class="c"># else-code</span>
+<span class="k">fi</span>
+
+<span class="o">[</span> ... <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="k">if</span><span class="nt">-code</span>
+<span class="o">[</span> ... <span class="o">]</span> <span class="o">||</span> <span class="k">else</span><span class="nt">-code</span>
+<span class="o">[</span> ... <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="k">if</span><span class="nt">-code</span> <span class="o">||</span> <span class="k">else</span><span class="nt">-code</span>
+</code></pre></div></div>
+
+<h2 id="case">Case</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+<span class="k">while </span><span class="nb">read </span>f
+<span class="k">do
+  case</span> <span class="nv">$f</span> <span class="k">in
+       </span>hello<span class="p">)</span>  <span class="nb">echo </span>English  <span class="p">;;</span>
+       howdy<span class="p">)</span>  <span class="nb">echo </span>American <span class="p">;;</span>
+       <span class="k">*</span><span class="p">)</span>      <span class="nb">echo </span>Unknown  <span class="p">;;</span>
+  <span class="k">esac</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
+<h2 id="external-programs">External Programs</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+<span class="nv">MY_NAME</span><span class="o">=</span><span class="sb">`</span>whoami<span class="sb">`</span>
+<span class="c"># 使用 ` 包裹的表达式，被认为是一条命令，会在执行后将该命令产生的标准输出作为值</span>
+<span class="nb">echo</span> <span class="nv">$MY_NAME</span>
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<p><a href="https://www.shellscript.sh">Shell Scripting Tutorial</a></p>
+
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/vendor.js"></script>
+
+
+
+  <script src="/assets/webfonts.js"></script>
+
+
+
+
+  <script src="/assets/scrollappear.js"></script>
+
+
+
+<script src="/assets/application.js"></script>
+
+
+</body>
+</html>
